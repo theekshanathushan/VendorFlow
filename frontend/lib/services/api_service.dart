@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import '../models/product.dart';
 import '../models/order.dart';
 
 class ApiService {
   final Dio _dio = Dio(BaseOptions(
-    // 10.0.2.2 is localhost for Android Emulator. Use localhost for iOS/Web.
-    baseUrl: 'http://10.0.2.2:8080/api', 
+    baseUrl: kIsWeb ? 'http://localhost:8080/api' : 'http://10.0.2.2:8080/api', 
     connectTimeout: const Duration(seconds: 5),
     receiveTimeout: const Duration(seconds: 3),
   ));

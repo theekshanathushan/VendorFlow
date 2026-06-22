@@ -1,0 +1,14 @@
+com\vendorflow\model\Product.class
+com\vendorflow\model\Order.class
+com\vendorflow\model\Order$OrderBuilder.class
+com\vendorflow\repository\OrderRepository.class
+com\vendorflow\model\Product$ProductBuilder.class
+com\vendorflow\repository\ProductRepository.class
+com\vendorflow\controller\AIController.class
+com\vendorflow\model\OrderItem.class
+com\vendorflow\VendorFlowApplication.class
+com\vendorflow\controller\OrderController.class
+com\vendorflow\model\OrderStatus.class
+com\vendorflow\service\OrderService.class
+com\vendorflow\model\OrderItem$OrderItemBuilder.class
+com\vendorflow\controller\ProductController.class
