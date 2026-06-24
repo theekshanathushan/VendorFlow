@@ -12,7 +12,7 @@ class OrderListNotifier extends AsyncNotifier<List<Order>> {
   Future<void> fetchOrders() async {
     state = const AsyncValue.loading();
     try {
-      final apiService = ref.watch(apiServiceProvider);
+      final apiService = ref.read(apiServiceProvider);
       final orders = await apiService.getOrders();
       state = AsyncValue.data(orders);
     } catch (e, st) {
@@ -22,7 +22,7 @@ class OrderListNotifier extends AsyncNotifier<List<Order>> {
 
   Future<void> updateOrderStatus(String id, String newStatus) async {
     try {
-      final apiService = ref.watch(apiServiceProvider);
+      final apiService = ref.read(apiServiceProvider);
       await apiService.updateOrderStatus(id, newStatus);
       await fetchOrders(); // refresh after update
     } catch (e) {

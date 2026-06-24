@@ -27,13 +27,20 @@ class Product {
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'id': id,
+    final map = <String, dynamic>{
       'name': name,
       'description': description,
       'price': price,
       'stockCount': stockCount,
-      'imageUrl': imageUrl,
     };
+    
+    if (id.isNotEmpty) {
+      map['id'] = id;
+    }
+    if (imageUrl != null) {
+      map['imageUrl'] = imageUrl;
+    }
+    
+    return map;
   }
 }

@@ -62,13 +62,16 @@ class Order {
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'id': id,
+    final map = <String, dynamic>{
       'customerName': customerName,
       'customerPhone': customerPhone,
       'items': items.map((i) => i.toJson()).toList(),
       'totalAmount': totalAmount,
       'status': status,
     };
+    if (id != null) {
+      map['id'] = id;
+    }
+    return map;
   }
 }
